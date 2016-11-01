@@ -14,4 +14,10 @@ class MakersBnB < Sinatra::Base
        erb :'sessions/new'
      end
   end
+
+  delete '/session/end' do
+    session[:user_id] = nil
+    flash.keep[:notice] = 'Farewell!'
+    redirect to '/'
+  end
 end
