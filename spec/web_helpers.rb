@@ -9,3 +9,11 @@ def sign_up(name:                  'Ben Forest',
   fill_in :password_confirmation, with: password_confirmation
   click_button 'Sign Up'
 end
+
+def sign_in_user( email:    'ben@actors.co.uk',
+                  password: 'imasilvafox')
+  visit('/session/new')
+  fill_in :email, with: email
+  fill_in :password, with: password
+  click_button 'Sign In'
+end
