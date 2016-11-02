@@ -18,4 +18,8 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/spaces'
   end
 
+  get '/spaces/:id' do
+    "Works"
+  end
+
 end

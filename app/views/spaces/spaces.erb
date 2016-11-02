@@ -13,12 +13,9 @@
 <ul id='spaces'>
   <% @spaces.each do |space| %>
     <li>
-      Title: <%= space.space_name %>
-      Description: <%= space.description %>
-      Price: <%= '%.2f' % space.price_per_night %>
-      <form action='/spaces/:space.id' method='get'>
-        <input type="submit" value='space.id' name="Go to space">
-      </form>
+        Title: <a href="/spaces/<%= space.id %>"><%= space.space_name %></a>
+        Description: <%= space.description %>
+        Price: <%= '%.2f' % space.price_per_night %>
     </li>
   <% end %>
 </ul>
