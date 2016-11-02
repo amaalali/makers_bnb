@@ -16,6 +16,8 @@ feature 'List a Space' do
 
     within 'ul#spaces' do
       expect(page).to have_content('London Apartment')
+      expect(page).to have_content('1 Bedroom Apartment, overlooking The River Thames')
+      expect(page).to have_content('80.00')
     end
   end
 end

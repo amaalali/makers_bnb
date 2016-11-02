@@ -13,6 +13,8 @@
   <% @spaces.each do |space| %>
     <li>
       Title: <%= space.space_name %>
+      Description: <%= space.description %>
+      Price: <%= '%.2f' % space.price_per_night %>
     </li>
   <% end %>
 </ul>
