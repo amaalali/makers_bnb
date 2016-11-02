@@ -5,7 +5,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    space = Space.create(space_name: params[:space_name],
+    @spaces = Space.create(space_name: params[:space_name],
                       description: params[:description],
                       price_per_night: params[:price_per_night],
                       available_from: params[:available_from],

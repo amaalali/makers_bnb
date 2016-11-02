@@ -6,6 +6,7 @@ class MakersBnB < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
+    @spaces = Space.all
     erb :'spaces/spaces'
   end
 
