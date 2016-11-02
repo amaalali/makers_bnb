@@ -10,3 +10,4 @@ require_relative 'server'
 # Controllers go here:
 require_relative 'controllers/users'
 require_relative 'controllers/sessions'
+require_relative 'controllers/spaces'
