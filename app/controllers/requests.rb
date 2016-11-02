@@ -1,8 +1,7 @@
 class MakersBnB < Sinatra::Base
 
   get '/requests' do
-    @bookings_requested = Requested.all(filter)
-    @bookings_received = Received.all(filter)
+    @bookings_requested = Request.all(:user_id => @current_user.id)
     erb :'requests/requests'
   end
 
