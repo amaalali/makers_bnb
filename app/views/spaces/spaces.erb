@@ -1,6 +1,7 @@
 <h1>Book a Space</h1>
 <p></p>
 
+
 <button href='/spaces/new' type="button">List a Space</button>
 
 <form action='/spaces/spaces' method='get'>
@@ -15,6 +16,9 @@
       Title: <%= space.space_name %>
       Description: <%= space.description %>
       Price: <%= '%.2f' % space.price_per_night %>
+      <form action='/spaces/:space.id' method='get'>
+        <input type="submit" value='space.id' name="Go to space">
+      </form>
     </li>
   <% end %>
 </ul>
