@@ -1,0 +1,42 @@
+<h1> Requests </h1>
+<p></p>
+
+<div id="booking-left">
+  <h3> Requests I've made: </h3>
+
+  <div id="">
+    <ul id='bookings-requested'>
+      <% @bookings_requested.each do |booking| %>
+        <li>
+          <a <%= booking.name %> ></a>
+        </li>
+        <li>
+          <a <%= booking.status %> ></a>
+        </li>
+        <li>
+          <a <%= booking.date %> ></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div id="booking-right">
+  <h3> Requests I've received: </h3>
+
+  <div id="">
+    <ul id='bookings-received'>
+      <% @bookings_received.each do |booking| %>
+        <li>
+          <a <%= booking.name %> ></a>
+        </li>
+        <li>
+          <a <%= booking.status %> ></a>
+        </li>
+        <li>
+          <a <%= booking.date %> ></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
