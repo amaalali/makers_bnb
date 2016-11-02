@@ -1,4 +1,5 @@
 class Space
+
   include DataMapper::Resource
 
   property :id,              Serial
@@ -7,4 +8,8 @@ class Space
   property :price_per_night, Float
   property :available_from,  Date
   property :available_to,    Date
+
+  # belongs_to :user
+  # has n, :requests
+
 end

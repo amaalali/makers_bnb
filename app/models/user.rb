@@ -4,6 +4,9 @@ class User
 
   include DataMapper::Resource
 
+  # has n, :requests
+  # has n, :spaces
+
   property :id,              Serial
   property :name,            String, required: true
   property :email,           String, format: :email_address, required: true, unique: true
