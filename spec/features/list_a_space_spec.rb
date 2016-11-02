@@ -4,11 +4,11 @@ feature 'List a Space' do
 
   scenario 'create a new space' do
     visit('/spaces/new')
-    fill_in 'space_name', with: 'London Apartment'
-    fill_in 'description', with: '1 Bedroom Apertment, overlooking The River Thames'
-    fill_in 'price_per_night', with: '£80.00'
-    fill_in 'available_from', with: '01/01/2016'
-    fill_in 'available_to', with: '01/01/2017'
+    fill_in 'space_name',       with: 'London Apartment'
+    fill_in 'description',      with: '1 Bedroom Apartment, overlooking The River Thames'
+    fill_in 'price_per_night',  with: '£80.00'
+    fill_in 'available_from',   with: '01/01/2016'
+    fill_in 'available_to',     with: '01/01/2017'
     click_button 'List my Space'
 
     expect(current_path).to eq('/spaces')
@@ -17,5 +17,4 @@ feature 'List a Space' do
       expect(page).to have_content('London Apartment')
     end
   end
-
 end

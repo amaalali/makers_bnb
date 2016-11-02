@@ -1,8 +1,18 @@
 <h1>Book a Space</h1>
 <p></p>
-  <button href='/spaces/new' type="button">List a Space</button>
-<form action='/spaces/listings' method='get'>
+
+<button href='/spaces/new' type="button">List a Space</button>
+
+<form action='/spaces/spaces' method='get'>
   <input name="available_from" type="date" placeholder="Available from">
   <input name="available_to" type="date" placeholder="Available to">
   <input type="submit" value="List Spaces">
 </form>
+
+<ul id='spaces'>
+  <% @spaces.each do |space| %>
+    <li>
+      Title: <%= space.space_name %>
+    </li>
+  <% end %>
+</ul>
