@@ -1,6 +1,7 @@
 <h1>Book a Space</h1>
 <p></p>
 
+
 <button href='/spaces/new' type="button">List a Space</button>
 
 <form action='/spaces/spaces' method='get'>
@@ -12,7 +13,9 @@
 <ul id='spaces'>
   <% @spaces.each do |space| %>
     <li>
-      Title: <%= space.space_name %>
+        Title: <a href="/spaces/<%= space.id %>"><%= space.space_name %></a>
+        Description: <%= space.description %>
+        Price: <%= '%.2f' % space.price_per_night %>
     </li>
   <% end %>
 </ul>
