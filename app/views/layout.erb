@@ -12,34 +12,61 @@
   </head>
 
   <body>
-    <% if current_user %>
-      Welcome, <%= current_user.email %>
-      <form action='/session/end' method='post'>
-        <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Sign Out'>
-      </form>
-    <% end %>
 
-    <% if flash[:errors] && !flash[:errors].empty? %>
-      Please refer to the following errors below:
-      <ul id='errors'>
-        <% flash[:errors].each do |error| %>
-        <li><%= error %></li>
+    <nav class="navbar navbar-light bg-faded">
+      <a class="navbar-brand" href="#">Makers B&B</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"> Spaces <span class="sr-only">(current)</span></a>
+        </li>
+        <% if !current_user %>
+          <li class="nav-item">
+            <a class="nav-link" href="/session/new"> Sign In </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="/request"> Requests </a>
+          </li>
         <% end %>
       </ul>
-    <% end %>
+    </nav>
 
-   <% if flash[:notice] %>
-     <div id='notice'>
-       <%= flash[:notice] %>
-     </div>
-   <% end %>
+    <div class="container">
+      <% if current_user %>
+        Welcome, <%= current_user.email %>
+        <form action='/session/end' method='post'>
+          <input type='hidden' name='_method' value='delete'>
+          <input type='submit' value='Sign Out'>
+        </form>
+      <% end %>
 
-    <%= yield %>
+      <% if flash[:errors] && !flash[:errors].empty? %>
+        Please refer to the following errors below:
+        <ul id='errors'>
+          <% flash[:errors].each do |error| %>
+          <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% end %>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+     <% if flash[:notice] %>
+       <div id='notice'>
+         <%= flash[:notice] %>
+       </div>
+     <% end %>
+
+      <%= yield %>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted"> Designed and developed by Squiggles & Co. </span>
+      </div>
+    </footer>
+
   </body>
-
 </html>
