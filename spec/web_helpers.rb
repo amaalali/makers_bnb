@@ -12,6 +12,7 @@ end
 
 def sign_in_user( email:    'ben@actors.co.uk',
                   password: 'imasilvafox')
+  User.create email: email, password: password, password_confirmation: password, name: email
   visit('/session/new')
   fill_in :email, with: email
   fill_in :password, with: password
