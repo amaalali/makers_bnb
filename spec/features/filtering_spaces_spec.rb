@@ -8,7 +8,7 @@ feature 'Filter spaces' do
 
   scenario 'based on dates' do
     visit '/'
-    fill_in :available_from, with:"01/01/2018"
+    fill_in :available_on, with:"01/01/2018"
     click_button "Filter Spaces"
     expect(page.status_code).to eq 200
     within('ul#spaces') do
