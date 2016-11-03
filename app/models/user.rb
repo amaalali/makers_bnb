@@ -1,11 +1,11 @@
 require 'bcrypt'
-require 'data_mapper'
-require 'dm-validations'
+#require 'data_mapper'
+#require 'dm-validations'
 
 class User
 
   include DataMapper::Resource
-  
+
   has n, :requests
   has n, :spaces
 

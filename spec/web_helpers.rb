@@ -12,6 +12,7 @@ end
 
 def sign_in_user( email:    'ben@actors.co.uk',
                   password: 'imasilvafox')
+  User.create email: email, password: password, password_confirmation: password, name: email
   visit('/session/new')
   fill_in :email, with: email
   fill_in :password, with: password
@@ -19,7 +20,7 @@ def sign_in_user( email:    'ben@actors.co.uk',
 end
 
 def list_a_space(space_name:       'London Apartment',
-                 description:      '1 Bedroom Apartment',
+                 description:      '1 Bedroom Apartment, overlooking The River Thames',
                  price_per_night:  '80.00',
                  available_from:   '01/01/2016',
                  available_to:     '01/01/2017')
