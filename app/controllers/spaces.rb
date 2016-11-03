@@ -18,6 +18,13 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/spaces'
   end
 
+  post '/spaces' do
+    @unfiltered_spaces = Space.all
+    date_from = Date.parse(available_from)
+
+    erb :'spaces/spaces'
+  end
+
   get '/spaces/:id' do
     @space = Space.first(id: params[:id])
     erb :'spaces/space'
