@@ -19,13 +19,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    @unfiltered_spaces = Space.all
-    @spaces = []
-    @unfiltered_spaces.each do |space|
-      if (space.available_from <= Date.parse(params[:available_on]) && Date.parse(params[:available_on]) <= space.available_to)
-        @spaces << space
-      end
-    end
+    @spaces = filter_available_spaces(params[:available_on])
     erb :'spaces/spaces'
   end
 
@@ -35,5 +29,3 @@ class MakersBnB < Sinatra::Base
   end
 
 end
-
-Space.all.each {|space| puts Date.parse('2017-01-01') < space.available_to}
