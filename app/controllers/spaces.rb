@@ -5,16 +5,17 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    # puts params[:space_name]
-    # puts params[:description]
-    # puts params[:price_per_night]
-    # puts params[:available_from]
-    # puts params[:available_to]
-    @spaces = Space.create(space_name: params[:space_name],
-                      description: params[:description],
-                      price_per_night: params[:price_per_night],
-                      available_from: params[:available_from],
-                      available_to: params[:available_to])
+    @spaces = Space.new(space_name: params[:space_name],
+                        description: params[:description],
+                        price_per_night: params[:price_per_night],
+                        available_from: params[:available_from],
+                        available_to: params[:available_to])
+    if @spaces.save
+      #success!
+    else
+      puts @spaces.errors
+    end
+
     redirect('/spaces')
   end
 
