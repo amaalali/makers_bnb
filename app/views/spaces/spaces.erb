@@ -4,10 +4,9 @@
 
 <a class="btn btn-secondary" role="button" href='/spaces/new'>List a Space</a>
 
-<form action='/spaces/spaces' method='get'>
-  <input name="available_from" type="date" placeholder="Available from">
-  <input name="available_to" type="date" placeholder="Available to">
-  <input type="submit" value="List Spaces">
+<form action='/spaces' method='post'>
+  <input name="available_on" type="date" placeholder="Available on">
+  <input type="submit" value="Filter Spaces">
 </form>
 
 <ul id='spaces'>
