@@ -19,7 +19,7 @@ def sign_in_user( email:    'ben@actors.co.uk',
 end
 
 def list_a_space(space_name:       'London Apartment',
-                 description:      '1 Bedroom Apartment, overlooking The River Thames',
+                 description:      '1 Bedroom Apartment',
                  price_per_night:  '80.00',
                  available_from:   '01/01/2016',
                  available_to:     '01/01/2017')

@@ -5,7 +5,7 @@ require 'dm-validations'
 class User
 
   include DataMapper::Resource
-
+  
   has n, :requests
   has n, :spaces
 

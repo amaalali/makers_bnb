@@ -3,6 +3,7 @@ require 'spec_helper'
 feature 'List a Space' do
 
   scenario 'create a new space' do
+    sign_in_user
     list_a_space
     expect(current_path).to eq('/spaces')
     within 'ul#spaces' do
