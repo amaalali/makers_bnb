@@ -1,8 +1,9 @@
 <h1>Book a Space</h1>
 <p></p>
 
-
-<a class="btn btn-secondary" role="button" href='/spaces/new'>List a Space</a>
+<% if current_user %>
+  <a class="btn btn-secondary" role="button" href='/spaces/new'>List a Space</a>
+<% end %>
 
 <form action='/spaces' method='post'>
   <input name="available_on" type="date" placeholder="Available on">
