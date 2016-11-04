@@ -5,7 +5,7 @@ module Helpers
   end
 
   def current_space
-    @current_space ||= Space.get(session[:space_id])
+    @current_space ||= Space.get(session[:id])
   end
 
   def filter_available_spaces(available_on)
