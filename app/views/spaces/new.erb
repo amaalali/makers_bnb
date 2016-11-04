@@ -1,12 +1,24 @@
 <h1>List a Space</h1>
-<p>Simply complete the form below to register your space</p>
 
-<form action='/spaces/new' method='post'>
-  <input name="space_name" type="text" placeholder="Space Name">
-  <input name="description" type="textarea" placeholder="Description">
-  <input name="price_per_night" type="text" placeholder="Price Per Night">
-  <input name="available_from" type="date" placeholder="Available from">
-  <input name="available_to" type="date" placeholder="Available to">
-  <input name="user_id" type="text" placeholder="User Id">
-  <input type="submit" value="List my Space">
-</form>
+<% if current_user %>
+  <p>Simply complete the form below to register your space</p>
+  <form action='/spaces/new' method='post'>
+    <input name="space_name" type="text" placeholder="Space Name">
+    <input name="description" type="textarea" placeholder="Description">
+    <input name="price_per_night" type="text" placeholder="Price Per Night">
+    <input name="available_from" type="date" placeholder="Available from">
+    <input name="available_to" type="date" placeholder="Available to">
+    <input name="user_id" type="text" placeholder="User Id">
+    <input type="submit" value="List my Space">
+  </form>
+<% else %>
+  <p>
+    Sorry, you must be Signed In to be able to list a space.
+  </p>
+  <li class="nav-item">
+    <a class="nav-link" href="/session/new"> Sign In </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/users/new"> Sign Up </a>
+  </li>
+<% end %>

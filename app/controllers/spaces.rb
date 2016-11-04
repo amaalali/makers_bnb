@@ -1,11 +1,11 @@
 class MakersBnB < Sinatra::Base
 
   get '/spaces/new' do
+    redirect '/session/new' if !current_user
     erb :'spaces/new'
   end
 
   post '/spaces/new' do
-    #@spaces = Space.new(params)
     @space = Space.new(params.merge(user: current_user))
     if @space.save
       #success!
