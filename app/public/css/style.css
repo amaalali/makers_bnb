@@ -1,14 +1,88 @@
-nav {
- margin-bottom: 1rem;
-}
-
 html {
   position: relative;
   min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 body {
   margin-bottom: 60px;
 }
+
+.navbar {
+  padding: 6px;
+}
+
+.navbar-default {
+  background-color: #AA1925;
+  border: none;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  color: #fff;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:focus {
+  color: #fff;
+}
+
+.navbar-nav>li>a {
+  line-height: 30px;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-brand:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-default .navbar-text {
+  color: #fff;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.navbar-brand {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  line-height: 28px;
+}
+
+.btn {
+  padding: 10px 28px;
+  font-weight: 500;
+}
+
+.navbar .btn-primary {
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+.navbar .btn-primary:hover {
+  color: #062533;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.navbar .btn-default {
+  color: #062533;
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.navbar .btn-default:hover {
+  color: #fff;
+  background-color: #062533;
+  border-color: #062533;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
