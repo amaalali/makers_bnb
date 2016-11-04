@@ -31,4 +31,15 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/space'
   end
 
+  post '/spaces/:id' do
+    @space = Space.first(id: params[:id])
+    @request = Request.create(params.merge(user: current_user, space_id: current_space))
+    if @request.save
+      #success!
+    else
+      @request.errors.each {|e| puts e}
+    end
+    redirect('/requests')
+  end
+
 end
