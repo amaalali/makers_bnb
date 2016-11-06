@@ -12,7 +12,7 @@ feature 'Filter spaces' do
     fill_in :available_on, with:"01/01/2018"
     click_button "Filter Spaces"
     expect(page.status_code).to eq 200
-    within('ul#spaces') do
+    within('div.space') do
       expect(page).not_to have_content('One')
       expect(page).to have_content('Two')
       expect(page).to have_content('Place Two')

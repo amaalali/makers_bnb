@@ -1,10 +1,15 @@
 class MakersBnB < Sinatra::Base
 
   enable :sessions
-  set :session_secret, 'super secret'
 
   use Rack::MethodOverride
   register Sinatra::Flash
+  register Sinatra::Partial
+
+  set :session_secret, 'super secret'
+  set :partial_template_engine, :erb
+  
+  enable :partial_underscores
 
   include Helpers
 

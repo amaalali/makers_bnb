@@ -2,6 +2,8 @@ ENV["RACK_ENV"] ||= "development"
 
 # Gem related here:
 require 'sinatra/base'
+require 'sinatra/flash'
+require 'sinatra/partial'
 
 # App related here:
 require_relative 'helpers'
