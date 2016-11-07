@@ -4,14 +4,6 @@ module Helpers
     @current_user ||= User.get(session[:user_id])
   end
 
-  # def current_space
-  #   @current_space ||= Space.get(session[:space_id])
-  # end
-  #
-  # def current_request
-  #   @current_request ||= Request.get(session[:request_id])
-  # end
-
   def filter_available_spaces(available_on)
     @unfiltered_spaces = Space.all
     @spaces = []

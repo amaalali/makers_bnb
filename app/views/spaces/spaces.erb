@@ -12,7 +12,7 @@
 <ul id='spaces'>
   <% @spaces.each do |space| %>
     <li>
-        Title: <a href="/requests/<%= space.id %>"><%= space.space_name %></a>
+        Title: <a href="/bookings/<%= space.id %>"><%= space.space_name %></a>
         Description: <%= space.description %>
         Price: <%= '%.2f' % space.price_per_night %>
     </li>

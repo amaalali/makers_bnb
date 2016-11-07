@@ -5,7 +5,6 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    #@spaces = Space.new(params)
     @space = Space.new(params.merge(user: current_user))
     if @space.save
       session[:space_id] = @space.id
@@ -30,16 +29,5 @@ class MakersBnB < Sinatra::Base
     @space = Space.first(id: params[:id])
     erb :'spaces/space'
   end
-
-  # post '/spaces/:id' do
-  #   @space = Space.first(id: params[:id])
-  #   @request = Request.create(params.merge(user: current_user, space_id: current_space))
-  #   if @request.save
-  #
-  #   else
-  #     @request.errors.each {|e| puts e}
-  #   end
-  #   redirect('/requests')
-  # end
 
 end

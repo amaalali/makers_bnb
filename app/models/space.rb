@@ -11,5 +11,5 @@ class Space
   property :available_to,    Date
 
   belongs_to :user
-  has n, :requests
+  has n, :bookings
 end

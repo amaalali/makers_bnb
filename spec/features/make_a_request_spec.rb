@@ -1,18 +1,22 @@
 feature 'Request spaces' do
   before(:each) do
     User.create(email: 'ben@actors.co.uk', password: 'imasilvafox', password_confirmation: 'imasilvafox', name: 'Ben')
-    Space.create(space_name: "One", description: "Place One", price_per_night: "1234.00", available_from: "01/01/2017", available_to: "31/12/2017", user: User.first)
   end
   scenario 'from the space link' do
     sign_in_user
-    visit '/'
-    click_link 'One'
-    expect(current_path).to eq('/requests/4')
+    visit '/spaces/new'
+    fill_in 'space_name',       with: 'house'
+    fill_in 'description',      with: 'big'
+    fill_in 'price_per_night',  with: 5
+    fill_in 'available_from',   with: '01/12/2016'
+    fill_in 'available_to',     with: '2017-01-01'
+    click_button 'List my Space'
+    expect(current_path).to eq('/spaces')
+    click_link 'house'
     fill_in :date, with: "01/01/2017"
     click_button "Request to Book"
-    expect(current_path).to eq('/single_request')
-    expect(page).to have_content("One")
-    expect(page).to have_content("not confirmed")
-    expect(page).to have_content("01/01/2017")
+    expect(current_path).to eq('/bookings')
+    expect(page).to have_content('2017-01-01')
+    #expect(page).to have_content('not confirmed')
   end
 end

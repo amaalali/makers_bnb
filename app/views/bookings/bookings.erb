@@ -8,13 +8,13 @@
     <ul id='bookings-requested'>
       <% @bookings_requested.each do |request| %>
         <li>
-          <a <%= request.name %> ></a>
+          <a <%= @booking.name %> ></a>
         </li>
         <li>
-          <a <%= request.status %> ></a>
+          <a <%= @booking.status %> ></a>
         </li>
         <li>
-          <a <%= request.date %> ></a>
+          <a <%= @booking.date %> ></a>
         </li>
       <% end %>
     </ul>

@@ -6,7 +6,7 @@ class User
 
   include DataMapper::Resource
 
-  has n, :requests
+  has n, :bookings
   has n, :spaces
 
   property :id,              Serial
