@@ -6,11 +6,11 @@ feature 'Request spaces' do
   scenario 'from the space link' do
     sign_in_user
     visit '/'
-    click_link "One"
-    expect(page.status_code).to eq 200
+    click_link 'One'
+    expect(current_path).to eq('/requests/4')
     fill_in :date, with: "01/01/2017"
     click_button "Request to Book"
-    expect(current_path).to eq('/requests')
+    expect(current_path).to eq('/single_request')
     expect(page).to have_content("One")
     expect(page).to have_content("not confirmed")
     expect(page).to have_content("01/01/2017")

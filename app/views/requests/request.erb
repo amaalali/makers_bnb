@@ -4,7 +4,7 @@
 
 <h3>£<%= '%.2f' % @space.price_per_night %></h3>
 
-<form action="/requests/:id" method="post">
+<form action="/requests" method="post">
   <input name="date" type="date" placeholder="Requested Date">
   <input type="submit" value="Request to Book">
 </form>

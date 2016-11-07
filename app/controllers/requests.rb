@@ -7,18 +7,22 @@ class MakersBnB < Sinatra::Base
 
   get '/requests/:id' do
     @space = Space.first(id: params[:id])
-    erb :'requests/request'
+  erb :'requests/request'
   end
 
-  post '/requests/:id' do
-    @space = Space.first(id: session[:space_id])
-    @request = Request.new(user_id: current_user, space_id: current_space, date: params[:date])
-
-    if @request.save
-      #success!
-    else
-      @request.errors.each {|e| puts e}
+  post '/requests' do
+      #@space = Space.first(id: session[:space_id])
+      @request = Request.new(user_id: current_user.id,
+                    date: params[:date])
+                    erb :'requests/single_request'
+      if @request.save
+        session[:request_id] = @request.id
+        redirect 'requests/requests'
+      else
+        flash.now[:errors] = @user.errors.full_messages
+        erb :'/'
+      end
     end
-    redirect to '/requests'
-  end
+
+
 end

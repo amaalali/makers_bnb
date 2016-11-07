@@ -9,9 +9,9 @@ class MakersBnB < Sinatra::Base
   include Helpers
 
   get '/' do
-    @spaces = Space.all
+      @spaces = Space.all
     erb :'spaces/spaces'
-  end
+end
 
   run! if app_file == $0
 end

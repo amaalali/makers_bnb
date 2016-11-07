@@ -8,12 +8,12 @@ class MakersBnB < Sinatra::Base
     #@spaces = Space.new(params)
     @space = Space.new(params.merge(user: current_user))
     if @space.save
-      #success!
+      session[:space_id] = @space.id
+      redirect '/spaces'
     else
-      @space.errors.each {|e| puts e}
+      flash.now[:errors] = @user.errors.full_messages
+      erb :'users/new'  #success!
     end
-
-    redirect('/spaces')
   end
 
   get '/spaces' do
@@ -31,15 +31,15 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/space'
   end
 
-  post '/spaces/:id' do
-    @space = Space.first(id: params[:id])
-    @request = Request.create(params.merge(user: current_user, space_id: current_space))
-    if @request.save
-      #success!
-    else
-      @request.errors.each {|e| puts e}
-    end
-    redirect('/requests')
-  end
+  # post '/spaces/:id' do
+  #   @space = Space.first(id: params[:id])
+  #   @request = Request.create(params.merge(user: current_user, space_id: current_space))
+  #   if @request.save
+  #
+  #   else
+  #     @request.errors.each {|e| puts e}
+  #   end
+  #   redirect('/requests')
+  # end
 
 end
