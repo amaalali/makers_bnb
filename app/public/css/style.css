@@ -6,11 +6,33 @@ html {
 }
 
 body {
+  color: #00333F;
   margin-bottom: 60px;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+h4 a {
+  color: #AA1925;
+}
+
+h4 a:hover {
+  color: #00333F;
+  text-decoration: none;
 }
 
 .navbar {
   padding: 6px;
+  font-size: 16px;
 }
 
 .navbar-default {
@@ -83,6 +105,18 @@ body {
   border-color: #062533;
 }
 
+.btn-primary {
+  color: #fff;
+  background-color: #00333F;
+  border-color: #00333F;
+}
+
+.btn-primary:hover {
+  color: #062533;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -90,4 +124,14 @@ body {
   height: 60px;
   line-height: 60px;
   background-color: #f5f5f5;
+}
+
+.user-form {
+  max-width: 378px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.list-space-form {
+  max-width: 392px;
 }

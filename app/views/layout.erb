@@ -51,21 +51,6 @@
 
     <div class="container">
 
-      <% if flash[:errors] && !flash[:errors].empty? %>
-        Please refer to the following errors below:
-        <ul id='errors'>
-          <% flash[:errors].each do |error| %>
-          <li><%= error %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-     <% if flash[:notice] %>
-       <div id='notice'>
-         <%= flash[:notice] %>
-       </div>
-     <% end %>
-
       <%= yield %>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>

@@ -1,15 +1,32 @@
-<h1>List a Space</h1>
-
 <% if current_user %>
-  <p>Simply complete the form below to register your space</p>
-  <form action='/spaces/new' method='post'>
-    <input name="space_name" type="text" placeholder="Space Name">
-    <input name="description" type="textarea" placeholder="Description">
-    <input name="price_per_night" type="text" placeholder="Price Per Night">
-    <input name="available_from" type="date" placeholder="Available from">
-    <input name="available_to" type="date" placeholder="Available to">
-    <input name="user_id" type="text" placeholder="User Id">
-    <input type="submit" value="List my Space">
+  <form action='/spaces/new' method='post' class="user-form list-space-form">
+    <%= partial :flash %>
+    <h2 class="form-signin-heading">List a Space</h2>
+    <p>Simply complete the form below to register your space on Makers B&B</p>
+    <div class="form-group">
+      <label>Space Name</label>
+      <input name="space_name" type="text" class="form-control" placeholder="The Ruby House of Love">
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea name="description" class="form-control" rows="5" placeholder="Go Wild In Here!"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Price Per Night</label>
+      <input name="price_per_night" type="text" class="form-control" placeholder="Price Per Night">
+    </div>
+    <label>Availability</label>
+    <div class="form-group">
+      <div class="form-inline">
+        <div class="form-group">
+          <input name="available_from" type="date" class="form-control" placeholder="Available from">
+        </div>
+        <div class="form-group">
+          <input name="available_to" type="date" class="form-control" placeholder="Available to">
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="btn btn-lg btn-primary btn-block" value="List my Space">
   </form>
 <% else %>
   <p>
