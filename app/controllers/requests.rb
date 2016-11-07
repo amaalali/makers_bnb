@@ -17,10 +17,10 @@ class MakersBnB < Sinatra::Base
     @request = Request.new(user_id: current_user.id, space_id: params[:space_id], date: params[:date], status: "not confirmed")
 
     if @request.save
-      #success!
+      puts "success!"
     else
       @request.errors.each {|e| puts e}
     end
-    redirect '/'
+    redirect to '/'
   end
 end
