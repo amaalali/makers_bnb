@@ -1,4 +1,4 @@
-# Makers B & B
+# MakersBnB
 
 ## User Stories
 
